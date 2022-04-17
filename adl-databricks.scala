@@ -18,15 +18,15 @@ extraConfigs = configs)
 
 
 
-val df = spark.read.csv("/mnt/data/" + containerName + "/Products.csv")
+val df = spark.read.csv("/mnt/data/" + containerName + "/customerinfo.csv")
 display(df)
 
 
 
-val df = spark.read.option("header", "true").csv("/mnt/data/" + containerName + "/Products.csv")
+val df = spark.read.option("header", "true").csv("/mnt/data/" + containerName + "/customerinfo.csv")
 display(df)
 
 
 
 val selected = df.select("productId", "title")
-selected.save.csv("/mnt/data/" + containerName + "/output/Products-mount.csv")
+selected.save.csv("/mnt/data/" + containerName + "/output/customerinfo-mount.csv")
